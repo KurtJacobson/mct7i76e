@@ -1,3 +1,0 @@
-[gui_scripts]
-mct7i76e = mct7i76e.mct7i76e:main
-
