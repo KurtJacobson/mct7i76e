@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sys, platform
+import sys, os, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow)
@@ -13,11 +13,12 @@ from mct7i76e.gui import Ui_MainWindow as gui
 import sys
 print('File Location {}'.format(sys.argv[0]))
 
+UI_FILE = os.path.join(os.path.dirname(__file__), "mct7i76e.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self, *args, **kwargs):
 		super(MainWindow, self).__init__(*args, **kwargs)
-		#uic.loadUi("mct7i76e.ui", self)
+		uic.loadUi(UI_FILE, self)
 		self.ui = gui()
 		self.version = '0.0.1'
 		self.setWindowTitle('Configuration Tool for 7i76e Version {}'.format(self.version))
